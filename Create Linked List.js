@@ -46,7 +46,8 @@ class LinkedList { //a class is a blueprint for creating objects
   printList() {
     let array = [];
     let currentNode = this.head;
-    while (currentNode !== null) {
+    let counter = 0
+    while (counter < this.length-1) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
     }
