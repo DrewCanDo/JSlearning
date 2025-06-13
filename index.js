@@ -1,4 +1,5 @@
 //Google Question
+//RETURN FIRST RECURRING CHARACTER 
 //Given an array = [2,5,1,2,3,5,1,2,4]:
 //It should return 2
 
@@ -21,7 +22,8 @@ function firstRecurringCharacter(input) {
   return undefined;
 }
 
-firstRecurringCharacter([2,5,1,2,3,5,1,2,4]);
+let returnedValue =firstRecurringCharacter([2,5,5,2,3,5,1,2,4]);
+console.log(returnedValue);
 //Bonus... What if we had this:
 // [2,5,5,2,3,5,1,2,4]
 // return 5 because the pairs are before 2,2
