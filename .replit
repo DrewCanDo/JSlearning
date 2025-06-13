@@ -82,3 +82,15 @@ support = true
       sourceMaps = true
       stopOnEntry = false
       type = "pwa-node"
+
+[workflows]
+runButton = "Run LinkedList"
+
+[[workflows.workflow]]
+name = "Run LinkedList"
+mode = "sequential"
+author = 19180472
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node \"Create Linked List.js\""
