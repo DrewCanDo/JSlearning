@@ -1,7 +1,7 @@
 class LinkedList { //a class is a blueprint for creating objects
   constructor(value) { //constructor is a special method for creating and initializing objects
     this.head = {
-      vaule: value,
+      value: value,
       next: null
     }
     this.tail = this.head; //refrence to the head
@@ -46,7 +46,7 @@ class LinkedList { //a class is a blueprint for creating objects
   printList() {
     let array = [];
     let currentNode = this.head;
-    while (currentNode.next) {
+    while (currentNode !== null) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
     }
