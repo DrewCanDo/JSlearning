@@ -33,7 +33,7 @@ class LinkedList { //a class is a blueprint for creating objects
       value: value,
       next: null
     }
-    const leader = this.traverseToIndex(index);
+    const leader = this.traverseToIndex(index-1);
     const holdingPointer = leader.next;
     leader.next = newNode;
     newNode.next = holdingPointer;
@@ -41,15 +41,26 @@ class LinkedList { //a class is a blueprint for creating objects
     return this;
   }
   remove(index) {
-
+    if(index == 0){
+     let headNode = this.traverseToIndex(index);
+        headNode = headNode.next;
+    }
+    if(index != 0){
+    const beforeTargetNode = this.traverseToIndex(index-1);
+    const targetNode = this.traverseToIndex(index);
+    beforeTargetNode.next = targetNode.next;
+    }
+    this.length--;
+    return this;
   }
   printList() {
     let array = [];
     let currentNode = this.head;
     let counter = 0
-    while (counter < this.length-1) {
+    while (counter < this.length) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
+      counter++;
     }
     console.log(array);
   }
@@ -68,5 +79,7 @@ class LinkedList { //a class is a blueprint for creating objects
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.prepend(2);
-//myLinkedList.insert(1, 99);
+myLinkedList.insert(1, 99);
+myLinkedList.remove(0);
 myLinkedList.printList();
+//2,10,5
