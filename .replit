@@ -106,4 +106,4 @@ args = "run Double Linked List"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node “doubleLinkedList.js\""
+args = "node doubleLinkedList.js"
