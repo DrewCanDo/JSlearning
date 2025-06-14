@@ -84,7 +84,7 @@ support = true
       type = "pwa-node"
 
 [workflows]
-runButton = "Run LinkedList"
+runButton = "run Double Linked List"
 
 [[workflows.workflow]]
 name = "Run LinkedList"
@@ -94,3 +94,16 @@ author = 19180472
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "node \"Create Linked List.js\""
+
+[[workflows.workflow]]
+name = "run Double Linked List"
+mode = "sequential"
+author = 19180472
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "run Double Linked List"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node “doubleLinkedList.js\""
