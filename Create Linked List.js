@@ -1,17 +1,19 @@
-class LinkedList { //a class is a blueprint for creating objects
-  constructor(value) { //constructor is a special method for creating and initializing objects
+class LinkedList {
+  //a class is a blueprint for creating objects
+  constructor(value) {
+    //constructor is a special method for creating and initializing objects
     this.head = {
       value: value,
-      next: null
-    }
+      next: null,
+    };
     this.tail = this.head; //refrence to the head
     this.length = 1;
   }
   append(value) {
     const newNode = {
       value: value,
-      next: null
-    }
+      next: null,
+    };
     this.tail.next = newNode; //this will grab the refreneced last item and set its next value to the new node.
     this.tail = newNode; //this will now update the last item to be the new node.
     this.length++;
@@ -20,8 +22,8 @@ class LinkedList { //a class is a blueprint for creating objects
   prepend(value) {
     const newNode = {
       value: value,
-      next: null
-    }
+      next: null,
+    };
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
@@ -31,8 +33,8 @@ class LinkedList { //a class is a blueprint for creating objects
     //insert a new value at a certain index in the linked list.
     const newNode = {
       value: value,
-      next: null
-    }
+      next: null,
+    };
     const leader = this.traverseToIndex(index - 1);
     const holdingPointer = leader.next;
     leader.next = newNode;
@@ -42,7 +44,7 @@ class LinkedList { //a class is a blueprint for creating objects
   }
   remove(index) {
     if (index == 0) {
-      this.head = this.head.next
+      this.head = this.head.next;
     }
     if (index != 0) {
       const beforeTargetNode = this.traverseToIndex(index - 1);
@@ -55,7 +57,7 @@ class LinkedList { //a class is a blueprint for creating objects
   printList() {
     let array = [];
     let currentNode = this.head;
-    let counter = 0
+    let counter = 0;
     while (counter < this.length) {
       array.push(currentNode.value);
       currentNode = currentNode.next;
