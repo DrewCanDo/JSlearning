@@ -54,6 +54,25 @@ class LinkedList {
     this.length--;
     return this;
   }
+
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head; //holding head or first node
+    this.tail = this.head;
+    let second = first.next; //holding second node
+    while (second) {
+      let temp = second.next; //holding third node (on side)
+      second.next = first; //first node now is at third
+      first = second; // second is now at first
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
+  }
+
   printList() {
     let array = [];
     let currentNode = this.head;
