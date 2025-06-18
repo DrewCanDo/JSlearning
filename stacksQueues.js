@@ -21,4 +21,9 @@
 
 //Stacks
 //we vist google, udemy, youtube. in that order on a browser
-//we can build it with arrays or linked lists
+//we can build it with arrays or linked lists. both work well!
+
+//Queues
+// a line with people waiting. matt -- Joy -- samir -- pavel
+//what is better for a que an array or a linked list?
+//a linked list would be best as an array has a O(n) for adding and removing the 1st item.
