@@ -23,10 +23,10 @@
 //we vist google, udemy, youtube. in that order on a browser
 //we can build it with arrays or linked lists
 
-setTimeout(() => {
-  //is a function that will NOT stop js from running. it will run after 2secs
-  console.log('2'); //it will run this once the time is complete
-}, 2000); //this 2000 is in miliseconds and it is the wait time.
+// setTimeout(() => {
+//   //is a function that will NOT stop js from running. it will run after 2secs
+//   console.log('2'); //it will run this once the time is complete
+// }, 2000); //this 2000 is in miliseconds and it is the wait time.
 
 //a web api
 // DOM (Document)
@@ -34,3 +34,70 @@ setTimeout(() => {
 //Timeout(setTimeout)
 
 //the abouve are part of the browswer. the Javascript Run-Time Enviornment
+
+//===================CODING MY OWN STACK Data Structure==============================
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Stack {
+  constructor() {
+    this.topPlate = null;
+    this.bottomPlate = null;
+    this.length = 0;
+  }
+
+  peek() {
+    //shows top node
+    console.log(this.topPlate.value);
+  }
+  push(value) {
+    //adds a new node to the top of the stack
+    if (!value) {
+      return value;
+    }
+    let newNode = new Node(value);
+    if (this.length == 0) {
+      this.bottomPlate = newNode;
+    } else {
+      this.topPlate.next = newNode;
+    }
+    this.topPlate = newNode;
+    this.length++;
+  }
+  pop() {
+    //remove a node from the top and return it
+    let lengthCounter = this.length;
+    let bottomNode = this.bottomPlate;
+    if ((lengthCounter = 0)) {
+      return null;
+    }
+    let removeNode = this.topPlate;
+    if (lengthCounter == 1) {
+      this.bottomPlate = null;
+      this.topPlate = null;
+    } else {
+      for (let i = 0; i < lengthCounter - 3; i++) {
+        //this forloop needs a negitive 3 b/c. it goes 1 down for the length starting at 0.
+        // 1 down for setting the bottomplate first. and 1 for getting the node before the last
+        bottomNode = bottomNode.next;
+      }
+      this.topPlate = bottomNode.next;
+      this.topPlate.next = null;
+    }
+    this.length--;
+    return removeNode.vaule;
+  }
+}
+
+let myStack = new Stack();
+myStack.push(1); //add 1
+myStack.push(10); // add 10
+myStack.push(18); // add 18
+console.log(myStack); //check the stack.
+myStack.peek(); //peek the top. should be 18
+myStack.pop(); //remove the top
+myStack.peek(); //peek the top again should now be 10
