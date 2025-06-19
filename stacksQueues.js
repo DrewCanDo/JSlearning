@@ -22,3 +22,15 @@
 //Stacks
 //we vist google, udemy, youtube. in that order on a browser
 //we can build it with arrays or linked lists
+
+setTimeout(() => {
+  //is a function that will NOT stop js from running. it will run after 2secs
+  console.log('2'); //it will run this once the time is complete
+}, 2000); //this 2000 is in miliseconds and it is the wait time.
+
+//a web api
+// DOM (Document)
+// AJAX(XMLHttpRequest)
+//Timeout(setTimeout)
+
+//the abouve are part of the browswer. the Javascript Run-Time Enviornment
